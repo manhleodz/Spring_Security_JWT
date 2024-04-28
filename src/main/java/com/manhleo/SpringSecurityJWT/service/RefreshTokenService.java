@@ -28,7 +28,7 @@ public class RefreshTokenService {
                 .user(ourUserRepo.findByPhone(phone).get())
                 .refreshToken(UUID.randomUUID().toString())
                 .accessToken(jwtToken)
-                .expiryDate(Instant.now().plusMillis(600000)) // set expiry of refresh token to 10 minutes - you can configure it application.properties file
+                .expiryDate(Instant.now().plusMillis(1200000)) // set expiry of refresh token to 10 minutes - you can configure it application.properties file
                 .build();
 
         return  tokenRepository.save(token);
@@ -41,7 +41,7 @@ public class RefreshTokenService {
                 .map(token -> {
                     token.setRefreshToken(newRefreshToken);
                     token.setAccessToken(accessToken);
-                    token.setExpiryDate(Instant.now().plusMillis(600000));
+                    token.setExpiryDate(Instant.now().plusMillis(1200000));
                     return tokenRepository.save(token);
                 });
         return newRow.orElse(null);

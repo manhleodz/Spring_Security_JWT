@@ -21,7 +21,7 @@ public class JWTUtils {
     private final String secreteString = "843567893696976453275974432697R634976R738467TR678T34865R6834R8763T478378637664538745673865783678548735687R3";
 
     private final SecretKey Key;
-    private static final long EXPIRATION_TIME = 1200000; //24hours or 86400000 milisecs
+    private static final long EXPIRATION_TIME = 1200000; // 20 minutes
 
     public JWTUtils() {
         byte[] keyBytes = Base64.getDecoder().decode(secreteString.getBytes(StandardCharsets.UTF_8));
