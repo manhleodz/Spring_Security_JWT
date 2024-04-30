@@ -2,8 +2,8 @@
 
 ![image](https://github.com/manhleodz/Spring_Security_JWT/assets/107250543/7bfe8b86-82ab-432c-89fc-2460f2382694)
 
-## Miêu tả:
-- Đây là 1 bản triển khai nho nhỏ khi tôi bắt đầu học và làm 1 dự án cá nhân về banking system bằng java spring boot
-- Có sử dụng refresh token và access token để định danh và phân quyền
-- Người dùng chỉ có thể đăng nhập và sử dụng trên 1 thiết bị duy nhất để đảm bảo an toàn vì là hệ thống ngân hàng. Khi tạo tài khoản thành công, người dùng đăng nhập lại và sẽ tạo ra refresh và access token để lưu trong db và gửi về phía người dùng với thời gian hết hạn là 20 phút.
-- Sau khi token hết hạn, người dùng cần sử dụng API refreshToken có gửi lên refreshToken để xác thực và tạo token mới. Nếu refreshToken và accessToken trùng với dữ liệu trong db thì sẽ tạo refresh và access token mới người dùng tiếp tục sử dụng ko thì sẽ trả về status 403
+## Description:
+- This is a small implementation when I started learning and doing a personal project about banking system using java spring boot.
+- Use refresh token and access token for identification and authorization
+- Users can only log in and use on a single device to ensure safety because it is a banking system. When creating an account successfully, the user logs back in and will create a refresh and access token to save in the database and send to the user with an expiration time of 20 minutes.
+- After the token expires, users need to use the refreshToken API to send to refreshToken to authenticate and create a new token. If refreshToken and accessToken match the data in the database, a new refresh and access token will be created. If the user continues to use it, status 403 will be returned.
